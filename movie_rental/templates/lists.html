@@ -1,0 +1,54 @@
+
+{% load static %}
+<!doctype html>
+<html>
+    <head>
+        <title>customers table</title>
+
+        <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+        <link rel="stylesheet" href="{% static 'css/borde.css' %}">
+    </head>
+    <body>
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="/movie/addmovie/">Add movie</a></li>
+      <li><a href="/movie/addcustomer/">Add customer</a></li>
+      <li><a href="/movie/availablemovies/">Available movies</a></li>
+      <li><a href="/movie/rentedmovies/">Rented movies</a></li>
+      <li><a href="/movie/listcustomers/">list of customers</a></li>
+      <li><a href="/movie/assignmovie/">Assign movie</a></li>
+    </ul>
+  </div>
+</nav>
+    <table>
+    <tr>
+    	<th>Customers Names </th>
+        
+    
+    	
+    </tr>
+    {% for i in customers %}
+	    <tr>
+
+	    	<td>{{ i.firstname }} {{i.lastname}}</td>
+	    	
+	    	
+		         {% csrf_token %}  
+				
+			
+			
+	    	
+	    </tr>
+     {% endfor %}
+     </table>  
+    </body>
+</html>
